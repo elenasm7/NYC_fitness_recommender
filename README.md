@@ -19,16 +19,18 @@ All reviews were scraped from **Yelp**, and other information about the classes 
 |1. Data aquisition using Selenium and Beautifulsoup to scrape from Yelp and ClassPass.|
 |2. Exploratory Data Analysis (EDA) and Data Cleaning|
 |3. Create baseline collaborative filtering models with SlopeOne and Co-Clustering|
+
 |Part Two|
 |--------|
-|1. EDA and Cleaning for Text Data|
-|2. feature engineering, lemming, tokenizing, vectorization, etc.|
-|3. Create New Rec. System Algorithm|
-|4. Feature selection |
+|1. EDA and Cleaning for Text Data                                                     |
+|2. feature engineering, lemming, tokenizing, vectorization, etc.                      |
+|3. Create New Rec. System Algorithm                                                   |
+|4. Feature selection                                                                  |
+
 |Part Three|
 |----------|
-|1. Serilize the model **(sp?)**|
-|2. Embed model as a WebApp |
+|1. Serilize the model **(sp?)**                                                       |
+|2. Embed model as a WebApp                                                            |
 
 **Spark may need to be added to the pervious two steps!!**
 
