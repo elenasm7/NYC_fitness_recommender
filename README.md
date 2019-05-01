@@ -14,13 +14,10 @@ All reviews were scraped from **Yelp**, and other information about the classes 
 
 ## Steps Taken:
 
-| - Part One:|
-|------------|
-
+|Part One:|
+|-------------|
 |1. Data aquisition using Selenium and Beautifulsoup to scrape from Yelp and ClassPass.|
-|------------|
 |2. Exploratory Data Analysis and Data Cleaning|
-|------------|
 |3. Create baseline collaborative filtering models with SlopeOne and Co-Clustering|
 
 
