@@ -29,7 +29,7 @@ All reviews were scraped from **Yelp**, and other information about the classes 
 
 |Part Three|
 |----------|
-|1. Serilize the model **(sp?)**                                                       |
+|1. Serialize the model **(sp?)**                                                       |
 |2. Embed model as a WebApp                                                            |
 
 **Spark may need to be added to the pervious two steps!!**
