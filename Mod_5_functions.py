@@ -15,7 +15,8 @@ def pickle_file(obj, filename):
     
 def open_pickle(file_location):
     pickle_in = open(file_location,"rb")
-    return pickle.load(pickle_in)
+    pickeled = pickle.load(pickle_in)
+    return pickeled
 
 def comp_info_and_users(url):
     user_links = []
