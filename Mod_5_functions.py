@@ -6,6 +6,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 import pandas as pd
 import pickle
+import spacy
 
 def pickle_file(obj, filename):
     outfile = open(filename,'wb')
@@ -160,3 +161,17 @@ def get_all_reviews(url_1,r_dict,review_num,company_count,starter_index):
                         
     driver.close()
     return pd.DataFrame(r_dict)
+
+def clean_text_column(row):
+    import string
+    '''
+    takes in a cell from the dataframe and removes all of the symbols from 
+    string.punctuation ('!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'), and then lower
+    cases each line.
+    '''
+    return row.translate(str.maketrans('', '', string.punctuation)).lower()
+
+
+def return_lemma(review,nlp):
+    doc = nlp(review)
+    return ' '.join([word.lemma_ for word in doc])
