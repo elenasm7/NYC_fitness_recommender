@@ -29,8 +29,8 @@ All reviews were scraped from **Yelp**, and other information about the classes 
 
 |Part Three|
 |----------|
-|1. Serialize the model **(sp?)**                                                       |
-|2. Embed model as a WebApp                                                            |
+|1. Serialize the model |
+|2. Embed model as a WebApp |
 
 **Spark may need to be added to the pervious two steps!!**
 
