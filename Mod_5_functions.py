@@ -175,3 +175,4 @@ def clean_text_column(row):
 def return_lemma(review,nlp):
     doc = nlp(review)
     return ' '.join([word.lemma_ for word in doc])
+
