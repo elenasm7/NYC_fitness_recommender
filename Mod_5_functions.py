@@ -182,3 +182,13 @@ def in_nyc(x):
     else: 
         return 0 
 
+def replace_fixed_words(rev,df):
+    words = rev.split(' ')
+    cor_rev = []
+    for word in words: 
+        if word in list(df.words):
+            cor_rev.append(df[df['words'] == word]['corrected'].item())
+        else:
+            cor_rev.append(word)
+    return ' '.join(cor_rev)
+
