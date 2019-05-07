@@ -176,3 +176,9 @@ def return_lemma(review,nlp):
     doc = nlp(review)
     return ' '.join([word.lemma_ for word in doc])
 
+def in_nyc(x):
+    if 'NY' in x:
+        return 1
+    else: 
+        return 0 
+
