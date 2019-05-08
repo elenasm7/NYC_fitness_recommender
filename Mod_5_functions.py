@@ -192,3 +192,30 @@ def replace_fixed_words(rev,df):
             cor_rev.append(word)
     return ' '.join(cor_rev)
 
+def is_sample(url):
+    tot_urls = list(set(new_user_selection['userUrl']))
+    if url in tot_urls:
+        return 1 
+    else:
+        return 0
+    
+def get_cats_and_review(ids):
+    counter = 0
+    headers = {
+        'Authorization': 'Bearer {}'.format(api_key),
+    }
+    for i in ids:
+        time.sleep(0.5)
+        url = 'https://api.yelp.com/v3/businesses/'+i
+        response = requests.get(url, headers=headers, params=url_params)
+        comp_cats['review_count'].append(response.json().get('review_count'))
+        comp_cats['rating'].append(response.json().get('rating'))
+        comp_cats['ids'].append(i)
+        try:
+            comp_cats['categories'].append([i['alias'] for i in response.json().get('categories')])
+        except:
+            comp_cats['categories'].append(response.json().get('categories'))
+        counter += 1
+        print(f'just did {counter}')
+    
+
