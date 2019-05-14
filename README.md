@@ -8,9 +8,11 @@ Fitness is something that is super important to me, so as someone new to NYC it 
 
 To add more depth to the reviews, NLP was used for the reviews left and descriptions given by the classes themselves. This project makes use of the python recommender system library _**Surprise**_. In a separate jupyter [notebook]() you can find some information to help with your own project with the library.
 
-All reviews were scraped from **Yelp**, and other information about the classes were scraped from **ClassPass**. This data was then used to make our preidction using different algorithms in Surprise such as: co-clustering and slopeone for collaborative fitering.
+All reviews were scraped from **Yelp**, and other information about the classes were gathered using the API. This data was then used to make our preidction using different algorithms in Surprise such as: SVD, SDV++ and BaselineOnly for collaborative fitering.
 
-**add here about the creation/combination of collobrative and content based filtering.**
+The first part of this project, is all collaboratibve filtering although there were some models creating using **content based filtering**. The first (current) _final model_ of this project is a content based filtering model using Baseline only with the best hyper-parameters, and filtering for class category (i.e. Cycling, Cardio, Yoga, etc.).
+
+In the next sections, I will outline the steps taken, report findings and share images of the final product--the django web app.
 
 ## Steps Taken:
 
@@ -18,20 +20,20 @@ All reviews were scraped from **Yelp**, and other information about the classes 
 |-------------|
 |1. Yelp and ClassPass Data aquisition (Selenium and Beautifulsoup)|
 |2. Exploratory Data Analysis (EDA) and Data Cleaning|
-|3. Create baseline collaborative-filtering models w/ SlopeOne & Co-Clustering|
+|3. Create baseline collaborative-filtering models using _Surprise_|
 
 |Part Two|
 |--------|
 |1. EDA and Cleaning for Text Data                                                     |
-|2. feature engineering, lemming, tokenizing, vectorization, etc.                      |
-|3. Create New Rec. System Algorithm                                                   |
-|4. Feature selection                                                                  |
+|2. |
+|3. feature engineering, lemming, tokenizing, vectorization, etc.                      |
+|4. Create a content based filtering model                                             |
+|5. Feature selection                                                                  |
 
 |Part Three|
 |----------|
 |1. Serialize the model |
-|2. Embed model as a WebApp |
-
-**Spark may need to be added to the pervious two steps!!**
+|2. Create Django WebApp|
+|2. Embed model in WebApp|
 
 
