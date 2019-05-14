@@ -88,13 +88,13 @@ def reviews_top_pages_test(url,r_dict,review_num,driver):
         if i not in r_dict['userUrl']:
             time.sleep(1)
             driver.get(i)
-            time.sleep(1)
+            time.sleep(0.5)
             try:
                 city = driver.find_element_by_class_name('user-location').text
                 if city in ('Queens, NY','Manhattan, NY','New York, NY','Brooklyn, NY','Manhattan, New York, NY'):
                     time.sleep(1)
                     driver.find_element_by_link_text('Reviews').click()
-                    time.sleep(1)
+                    time.sleep(0.5)
                     driver.find_element_by_link_text('All Categories').click()
                     time.sleep(1)
                     driver.find_element_by_partial_link_text('Fitness & Instruction').click()
@@ -156,7 +156,7 @@ def get_all_reviews(url_1,r_dict,review_num,company_count,starter_index):
                     print(len(r_dict[col]))
                 reviews_top_pages_test(i[1],r_dict,review_num,driver)
             else:
-                time.sleep(1)
+                time.sleep(0.5)
                 reviews_top_pages_test(i[1],r_dict,review_num,driver)
                         
     driver.close()
@@ -217,5 +217,10 @@ def get_cats_and_review(ids):
             comp_cats['categories'].append(response.json().get('categories'))
         counter += 1
         print(f'just did {counter}')
-    
+
+def cat_join(cats):
+    try: 
+        return ' '.join(cats)
+    except:
+        return 0
 
