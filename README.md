@@ -12,6 +12,10 @@ All reviews were scraped from **Yelp**, and other information about the classes 
 
 The first part of this project, is all collaboratibve filtering although there were some models creating using **content based filtering**. The first (current) _final model_ of this project is a content based filtering model using Baseline only with the best hyper-parameters, and filtering for class category (i.e. Cycling, Cardio, Yoga, etc.).
 
+The second part, I cleaned the text data and created a content based filtering model. The Surprise library lacks support for this type of recommender system, so for this I went through the NLP process and then used tf-idf and cosine similarity. This would return gyms/studios that were the most similar based on reviews. 
+
+In the third section, I decided on my current model which takes the best BaselineOnly model from part one, and then filters the results based on the category it falls into (i.e. cycling, pilotes, yoga, etc.). I then created a simple Django webapp that would use some of the form inputs pass it into the serialized model, and query the results with the rest of the user inputs. 
+
 In the next sections, I will outline the steps taken, report findings and share images of the final product--the django web app.
 
 ## Steps Taken:
@@ -25,10 +29,8 @@ In the next sections, I will outline the steps taken, report findings and share 
 |Part Two|
 |--------|
 |1. EDA and Cleaning for Text Data                                                     |
-|2. |
-|3. feature engineering, lemming, tokenizing, vectorization, etc.                      |
-|4. Create a content based filtering model                                             |
-|5. Feature selection                                                                  |
+|2. feature engineering, lemming, tokenizing, vectorization, etc.                      |
+|3. Create a content based filtering model                                             |
 
 |Part Three|
 |----------|
