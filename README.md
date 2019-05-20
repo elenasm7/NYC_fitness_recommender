@@ -46,5 +46,10 @@ For the webscraping, I grabbed all of the reviewers from the initial start page-
 
 For the Yelp API, after I had the final list of comapnies I used those to return specific information about each. I defined a function that would return a dictionary of the company name, the total number of reviews, it's categories (i.e. cycling, yoga, etc.), and it's average rating.
 
+## Explatory Data Analysis
+
+After collecting all of the data, it was time to [explore](https://github.com/elenasm7/NYC_fitness_recommender/blob/master/exploratory_data_analysis.ipynb). This mostly consisited of looking at the distribution of start ratings, avergae star ratings by users and for businesses, distruibtion of the total number of reviews left my users and for companies.
+
+![star distributions](assets/Graphs/Orig_rating_dist.png)
 
 
