@@ -50,8 +50,13 @@ For the Yelp API, after I had the final list of comapnies I used those to return
 
 After collecting all of the data, it was time to [explore](https://github.com/elenasm7/NYC_fitness_recommender/blob/master/exploratory_data_analysis.ipynb). This mostly consisited of looking at the distribution of start ratings, avergae star ratings by users and for businesses, distruibtion of the total number of reviews left my users and for companies.
 
-![star distributions](assets/Graphs/Orig_rating_dist.png)
-(*above is the distribution of star ratings*)
 
+<p align="center">
+  <img width="460" alt="star_rating_dist" height="300" src="assets/Graphs/Orig_rating_dist.png">
+</p>
+<p align="center">
+  <span style="color:blue;font-style: italic;">above is the distribution of star ratings</span>
+</p>
+                                      
 I was pretty surprised in how positive the reviews skewed. I was predicting the opposite. However, this skew can cause an issue with class imbalance while making predictions for each user. I will revisit this in the NLP section.
 
