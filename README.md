@@ -60,4 +60,10 @@ After collecting all of the data, it was time to [explore](https://github.com/el
                                       
 I was pretty surprised in how positive the reviews skewed. I was predicting the opposite. However, this skew can cause an issue with class imbalance while making predictions for each user. I will revisit this in the NLP section.
 
-![alt-text-1](assets/Graphs/review_count_top_10.png "Business Review Counts") ![alt-text-2](assets/Graphs/User_reviews_count.png "User Review Counts")
+<p align="center">
+  <img width="370" alt="star_rating_dist" height="auto" src="assets/Graphs/review_count_top_10.png">
+  <img width="370" alt="star_rating_dist" height="auto" src="assets/Graphs/User_reviews_count.png">
+</p>
+
+
+
