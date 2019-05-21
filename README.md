@@ -54,9 +54,7 @@ After collecting all of the data, it was time to [explore](https://github.com/el
 <p align="center">
   <img width="460" alt="star_rating_dist" height="300" src="assets/Graphs/Orig_rating_dist.png">
 </p>
-<p align="center">
-  above is the distribution of star ratings
-</p>
+above is the distribution of star ratings
                                       
 I was pretty surprised in how positive the reviews skewed. I was predicting the opposite. However, this skew can cause an issue with class imbalance while making predictions for each user. I will revisit this in the NLP section.
 
