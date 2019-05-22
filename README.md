@@ -68,9 +68,6 @@ After collecting all of the data, it was time to [explore](https://github.com/el
 <p align="center">
   <img width="460" alt="star_rating_dist" height="300" src="assets/Graphs/Orig_rating_dist.png">
 </p>
-<p align="center">
-  <span style="color:blue;font-style: italic;">above is the distribution of star ratings</span>
-</p>
                                       
 I was pretty surprised in how positive the reviews skewed. I was predicting the opposite. However, this skew can cause an issue with class imbalance while making predictions for each user. I will revisit this in the NLP section.
 
@@ -82,10 +79,31 @@ I was pretty surprised in how positive the reviews skewed. I was predicting the 
 After exploring the data more, I relaized that even though I filtered users and studios by location I didn't filter the reviews I scraped from them. There were many studios/gyms outside of the NYC metro area, so I dropped them. The follium map below shows all of the locations.
 
 <p align="center">
+  Studio Locations Map
+  <br/>
   <img width="500" alt="Studio Map" height="auto" src="assets/studio_locations.png">
 </p>
 
 ## Natural Language Processing (*NLP*)
+
+### Part 1: Sentiment Analysis
+
+In this section I used the [Vader](http://www.nltk.org/howto/sentiment.html) from the NLTK library to find the sentiment rating of the review to augment the star rating given. The reason this was important was due to the class imbalance of the ratings we started with. More than half of all of the reviews were five-star ratings. This means that the model fit on the data may learn to predict a five-star rating for more people than is actually correct. By augmenting the ratings by the sentiment in the scores we can change the distribution of the scores and make them less imbalanced.
+
+Steps of how I did this....
+
+### Part 2: Review Similarity
+
+Data Preprocessing Overview for Text Data: 
+1. created a function to remove all punction -- found in [module_functions] (https://github.com/elenasm7/NYC_fitness_recommender/blob/master/Mod_5_functions.py)
+2. lower case all of the words in reviews
+3. remove all words shorter than 3 characters
+4. remove stop words
+5. Manually Correct 
+6. check for spelling using [SymSpell](https://github.com/wolfgarbe/SymSpell)
+7. TF-IDF
+8. Cosine Similarity Between Review TF-IDF Vectors
+
 
 ## Baseline Models and Model Selection
 
