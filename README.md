@@ -133,11 +133,11 @@ Next, I did the same for studios/gyms and their categories--this gave results th
 ## Baseline Models and Model Selection
 
 I quickly ran a baseline model for all of the user-user models in Surprise. The results are below:
-
+<br/>
 <p align="center">
-  <img width="500" alt="Studio Map" height="auto" src="assets/Graphs/second_start_rating_dist.png">
+  <img width="300" alt="model_selection" height="auto" src="assets/model_dataframe.png">
 </p>
-
+<br/>
 As you can see, the top three models (aka the ones with the __smallest RMSE__) were: BaselineOnly, SVD, and SVD++. I moved forward with these three to do hyperparameter tuning using gridsearch.
 
 The top three were: 
@@ -146,12 +146,36 @@ The top three were:
 
 | Hyperparameter  | Best Option |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Method  | Stocastic Gradient Descent (sgd)  |
+| Regularization  | 0.08 |
+| Learning Rate | 0.01 |
+| Number of Epochs | 3 |
 
-####
+This had a final average **RMSE** (root mean squared error) of: **1.1427**
 
-# Django App
+#### SVD
+
+| Hyperparameter  | Best Option |
+| ------------- | ------------- |
+| Number of Epochs  | 37  |
+| Learning Rate  | 0.008 |
+| Regularization | 0.2 | 
+
+This had a final average **RMSE** (root mean squared error) of: **1.14624**
+
+#### SVD++
+
+| Hyperparameter  | Best Option |
+| ------------- | ------------- |
+| Number of Epochs  | 35  |
+| Learning Rate  | 0.007 |
+| Regularization | 0.2 | 
+
+This had a final average **RMSE** (root mean squared error) of: **1.1454**
+
+As you can see, all of these had fairly similar average RMSE. However, the deciding factor in this was the cost. **BaselineOnly was the most cost effective** when it came to the time spent fitting and testing the model. So, I decided to go forward with this option.
+
+## Django App
 
 ## Key Take Aways
 
