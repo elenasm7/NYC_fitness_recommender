@@ -42,13 +42,13 @@ In the next sections, I will outline the steps taken, report findings and share 
 
 |Part Two|
 |--------|
-|1. EDA and Cleaning for Text Data                                                     |
+| 1. EDA and Cleaning for Text Data <img width=230/>                   |
 |2. feature engineering, lemming, tokenizing, vectorization, etc.                      |
 |3. Create a content based filtering model                                             |
 
 |Part Three|
 |----------|
-|1. Serialize the model |
+|1. Serialize the model <img width=320/>|
 |2. Create Django WebApp|
 |2. Embed model in WebApp|
 
