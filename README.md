@@ -138,7 +138,7 @@ I quickly ran a baseline model for all of the user-user models in Surprise. The 
   <img width="300" alt="model_selection" height="auto" src="assets/model_dataframe.png">
 </p>
 <br/>
-As you can see, the top three models (aka the ones with the __smallest RMSE__) were: BaselineOnly, SVD, and SVD++. I moved forward with these three to do hyperparameter tuning using gridsearch.
+As you can see, the top three models (aka the ones with the **smallest RMSE**) were: BaselineOnly, SVD, and SVD++. I moved forward with these three to do hyperparameter tuning using gridsearch.
 
 The top three were: 
 
@@ -177,11 +177,31 @@ As you can see, all of these had fairly similar average RMSE. However, the decid
 
 ## Django App
 
-## Key Take Aways
+I created a small web app using Django. Django is great becuase it will handle so much of the backend. It also it great for a project like this due to it's automation connection to an SQL Database. All the main steps needed to set up the app is below.
 
+Steps:
+1. Created an SQLiite database from my scraped reviews DataFrame
+2. Replaced the original included database with the one I made, and then performed a migration
+3. Serialized the final BaselineOnly model and added it to the app folder
+4. Created the function to return the selected number of recommended results
+
+The user input form requires a few itmes: 
+- user name
+- Gym Category to Filter Results
+- Number of Results Wanted
+- Minumum Averge Star Rating of the Gym
+
+This would return a filtered list of the top choices for any given user.
+
+Screen shots of the web app view below:
+
+## Key Take Aways
+1. The BaselineOnly Model is the most cost efficient model. A few of the options had very similar errors, but this model was the best option with time needed to fit and test as well as error rate. The final RMSE ended up at approximately **1.1427**.
+2. The Surprise library does not handle content based filtering. For this I needed to create the TF-IDF vectors for each of the reviews/categories for the studios/gyms and calcualte the cosine similarity for each studio. Becuase this section does not predict the rating a user will give there was not an error rate to compute. However, this step is pretty easy to visually/manually check.
+3. Sentiment Analysis for Vader was specifically made for Social Media. You do not need to clean your data before this process.
+4. Hybrid Models are much more challenging than the other two alone. There is so much research being done on this front. So, it is very complicated and there is very little documentation on how to implement it.
+5. **ALWAYS** do your initial migrations with you SQL database and the Django App, if not this can cause some headaches in the long run.
 
 ## Next Steps
+1. 
 
-
-
-</div>
