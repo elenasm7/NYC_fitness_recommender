@@ -11,6 +11,7 @@ An NYC based application to provide you with the best recommendations for fitnes
 4. [Explatory Data Analysis](#explatory-data-analysis)
 5. [Natural Language Processing](#natural-language-processing)
 6. [Baseline Models and Model Selection](#baseline-models-and-model-selection)
+8. [Django App](#django-app)
 7. [Key Take Aways](#key-take-aways)
 8. [Next Steps](#next-steps)
 
@@ -40,7 +41,7 @@ In the next sections, I will outline the steps taken, report findings and share 
 |2. Exploratory Data Analysis (EDA) and Data Cleaning|
 |3. Create baseline collaborative-filtering models using _Surprise_|
 
-|<img width=200/> Part Two <img width=200/>|
+|<img width=205/> Part Two <img width=205/>|
 |:--------:|
 | 1. EDA and Cleaning for Text Data                    |
 |2. feature engineering, lemming, tokenizing, vectorization, etc.                      |
@@ -86,6 +87,7 @@ After exploring the data more, I relaized that even though I filtered users and 
   <img width="500" alt="Studio Map" height="auto" src="assets/studio_locations.png">
 </p>
 
+Now that there was a set number of users and studios/gyms, I could move on to sentiment analysis and NLP.
 
 ## Natural Language Processing
 
@@ -93,23 +95,63 @@ After exploring the data more, I relaized that even though I filtered users and 
 
 In this section I used the [Vader](http://www.nltk.org/howto/sentiment.html) from the NLTK library to find the sentiment rating of the review to augment the star rating given. The reason this was important was due to the class imbalance of the ratings we started with. More than half of all of the reviews were five-star ratings. This means that the model fit on the data may learn to predict a five-star rating for more people than is actually correct. By augmenting the ratings by the sentiment in the scores we can change the distribution of the scores and make them less imbalanced.
 
-Steps of how I did this....
+I created a function that would go through each of the reviews and returned the combined sentiment analysis score. The sentiment score was a decimal below +- 1 -- it could be positive or negative. I computed two different augmented ratings. The first I multiplied the original score by the combined sentiment score and then added it to the original score. The results of the new distribution/histogram is shown below:
+
+
+<p align="center">
+  <img width="500" alt="Studio Map" height="auto" src="assets/Graphs/new_start_rating_dist.png">
+</p>
+
+The second method I tried was simply adding the combined score to the original rating. These results again are shown below: 
+
+<p align="center">
+  <img width="500" alt="Studio Map" height="auto" src="assets/Graphs/second_start_rating_dist.png">
+</p>
+
+At the time being, even though the first method improved the distribution of scores by a lot it did not have a big impact on my model's error. However, this is somehting I plan to work on and tweak in the coming weeks. More on this in the [Next Steps](#nex-steps) section.
 
 ### Part 2: Review Similarity
 
+This section served as a content based recommender system model. I hoped that they user reviews and the term frequency could be telling of the similarities between studios. The first step involves preprocessing the data, which is detailed below, followed by modeling using Cosine Similiarity.
+
 Data Preprocessing Overview for Text Data: 
-1. created a function to remove all punction -- found in [module_functions] (https://github.com/elenasm7/NYC_fitness_recommender/blob/master/Mod_5_functions.py)
+1. created a function to remove all punction -- found in [module_functions](https://github.com/elenasm7/NYC_fitness_recommender/blob/master/Mod_5_functions.py)
 2. lower case all of the words in reviews
-3. remove all words shorter than 3 characters
 4. remove stop words
 5. Manually Correct 
 6. check for spelling using [SymSpell](https://github.com/wolfgarbe/SymSpell)
-7. TF-IDF
-8. Cosine Similarity Between Review TF-IDF Vectors
+7. Compute TF-IDF for each review
 
+Some things to note:
+- SymSpell was great. Cost effective (time wise) and more accurate than TextBlob or other spell checkers I've used in the past.
+- I originally removed words that were 3 letters or less, as well as stop words, but then realized words like Abs were probably used in reviews and that is something I wanted to keep.
+- TF-IDF was computed using Scikit-Learn's feature_extraction.text.TfidfVectorizer
+
+
+After finding the Term Frequency - Inner Document Frequeny (TF-IDF), I computed the Cosine Similarity Between the review vectors. I did this becuase, words that have a high frequency in a single review, but a lower overall density in all of the reviews combined would possibly make that a characteristic of the studio/gym. So, if _"Abs"_ or _"Cardio"_ had a similar frequency for two separate places then users who enjoy one of those places --_or hate it_-- may feel the same way about the other one. After doing this, I created a function that would return the top 5 similar gyms to any gym I entered. 
+
+Next, I did the same for studios/gyms and their categories--this gave results that I could verify just by looking at them.
 
 ## Baseline Models and Model Selection
 
+I quickly ran a baseline model for all of the user-user models in Surprise. The results are below:
+
+<p align="center">
+  <img width="500" alt="Studio Map" height="auto" src="assets/Graphs/second_start_rating_dist.png">
+</p>
+
+As you can see, the top three models (aka the ones with the __smallest RMSE__) were: BaselineOnly, SVD, and SVD++. I moved forward with these three to do hyperparameter tuning using gridsearch.
+
+The top three were: 
+
+#### BaselineOnly
+|Hyperparameter|| Best Option|
+|:-------:||:-------:|
+|test||test|
+|test||test|
+|test||test|
+
+# Django App
 
 ## Key Take Aways
 
