@@ -4,16 +4,15 @@ An NYC based application to provide you with the best recommendations for fitnes
 
 <br>
 
-|README Table of Contents |
-|:-------------:|
-| <img width=170/> Overview  <img width=170/>|
-|  Steps Taken |
-|  Data Acquisition |
-|  Explatory Data Analysis (*EDA*) |
-|  Natural Language Processing (*NLP*) |
-|  Baseline Models and Model Selection |
-|  Key Take Aways |
-|  Next Steps |
+### README Table of Contents
+1. [Overview](#overview)
+2. [Steps Taken](#steps-taken)
+3. [Data Acquisition](#data-acquisition)
+4. [Explatory Data Analysis](#explatory-data-analysis)
+5. [Natural Language Processing](#natural-language-processing)
+6. [Baseline Models and Model Selection](#baseline-models-and-model-selection)
+7. [Key Take Aways](#key-take-aways)
+8. [Next Steps](#next-steps)
 
 
 ## Overview:
@@ -31,6 +30,7 @@ The second part, I cleaned the text data and created a content based filtering m
 In the third section, I decided on my current model which takes the best BaselineOnly model from part one, and then filters the results based on the category it falls into (i.e. cycling, pilotes, yoga, etc.). I then created a simple Django webapp that would use some of the form inputs pass it into the serialized model, and query the results with the rest of the user inputs. 
 
 In the next sections, I will outline the steps taken, report findings and share images of the final product--the django web app.
+
 
 ## Steps Taken:
 
@@ -52,6 +52,7 @@ In the next sections, I will outline the steps taken, report findings and share 
 |2. Create Django WebApp|
 |2. Embed model in WebApp|
 
+
 ## Data Acquisition
 
 This was the most time intensive part of the process. This was a combination of webscraping in Selenium and Beautiful Soup, and use of the Yelp API. You can see in my [sraping notebook](https://github.com/elenasm7/NYC_fitness_recommender/blob/master/Scrape_reviews_and_descriptions.ipynb) and [module_functions](https://github.com/elenasm7/NYC_fitness_recommender/blob/master/Mod_5_functions.py) the actual function built to do this process. 
@@ -60,7 +61,8 @@ For the webscraping, I grabbed all of the reviewers from the initial start page-
 
 For the Yelp API, after I had the final list of comapnies I used those to return specific information about each. I defined a function that would return a dictionary of the company name, the total number of reviews, it's categories (i.e. cycling, yoga, etc.), and it's average rating.
 
-## Explatory Data Analysis (*EDA*)
+
+## Explatory Data Analysis
 
 After collecting all of the data, it was time to [explore](https://github.com/elenasm7/NYC_fitness_recommender/blob/master/exploratory_data_analysis.ipynb). This mostly consisited of looking at the distribution of start ratings, avergae star ratings by users and for businesses, distruibtion of the total number of reviews left my users and for companies.
 
@@ -84,7 +86,8 @@ After exploring the data more, I relaized that even though I filtered users and 
   <img width="500" alt="Studio Map" height="auto" src="assets/studio_locations.png">
 </p>
 
-## Natural Language Processing (*NLP*)
+
+## Natural Language Processing
 
 ### Part 1: Sentiment Analysis
 
@@ -107,7 +110,12 @@ Data Preprocessing Overview for Text Data:
 
 ## Baseline Models and Model Selection
 
+
 ## Key Take Aways
+
 
 ## Next Steps
 
+
+
+</div>
