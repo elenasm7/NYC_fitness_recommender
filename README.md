@@ -2,7 +2,6 @@
 
 An NYC based application to provide you with the best recommendations for fitness class, studios, and gyms. From yoga to cycling, swimming to energy healing, its got you covered. I hope you enjoy the final product as much as I have! 
 
-<br>
 
 ### README Table of Contents
 1. [Overview](#overview)
@@ -95,7 +94,7 @@ Now that there was a set number of users and studios/gyms, I could move on to se
 
 In this section I used the [Vader](http://www.nltk.org/howto/sentiment.html) from the NLTK library to find the sentiment rating of the review to augment the star rating given. The reason this was important was due to the class imbalance of the ratings we started with. More than half of all of the reviews were five-star ratings. This means that the model fit on the data may learn to predict a five-star rating for more people than is actually correct. By augmenting the ratings by the sentiment in the scores we can change the distribution of the scores and make them less imbalanced.
 
-I created a function that would go through each of the reviews and returned the combined sentiment analysis score. The sentiment score was a decimal below +- 1 -- it could be positive or negative. I computed two different augmented ratings. The first I multiplied the original score by the combined sentiment score and then added it to the original score. The results of the new distribution/histogram is shown below:
+I created a function that would go through each of the reviews and returned the combined sentiment analysis score. The sentiment score was a decimal below +- 1, _it could be positive or negative_. I computed two different augmented ratings. The first I multiplied the original score by the combined sentiment score and then added it to the original score. The results of the new distribution/histogram is shown below:
 
 
 <p align="center">
@@ -127,7 +126,6 @@ Some things to note:
 - I originally removed words that were 3 letters or less, as well as stop words, but then realized words like Abs were probably used in reviews and that is something I wanted to keep.
 - TF-IDF was computed using Scikit-Learn's feature_extraction.text.TfidfVectorizer
 
-
 After finding the Term Frequency - Inner Document Frequeny (TF-IDF), I computed the Cosine Similarity Between the review vectors. I did this becuase, words that have a high frequency in a single review, but a lower overall density in all of the reviews combined would possibly make that a characteristic of the studio/gym. So, if _"Abs"_ or _"Cardio"_ had a similar frequency for two separate places then users who enjoy one of those places --_or hate it_-- may feel the same way about the other one. After doing this, I created a function that would return the top 5 similar gyms to any gym I entered. 
 
 Next, I did the same for studios/gyms and their categories--this gave results that I could verify just by looking at them.
@@ -145,11 +143,13 @@ As you can see, the top three models (aka the ones with the __smallest RMSE__) w
 The top three were: 
 
 #### BaselineOnly
-|Hyperparameter|| Best Option|
-|:-------:||:-------:|
-|test||test|
-|test||test|
-|test||test|
+
+| Hyperparameter  | Best Option |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
+####
 
 # Django App
 
