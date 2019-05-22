@@ -40,13 +40,13 @@ In the next sections, I will outline the steps taken, report findings and share 
 |2. Exploratory Data Analysis (EDA) and Data Cleaning|
 |3. Create baseline collaborative-filtering models using _Surprise_|
 
-|<img width=120/>Part Two<img width=120/>|
+|<img width=200/> Part Two <img width=200/>|
 |:--------:|
 | 1. EDA and Cleaning for Text Data                    |
 |2. feature engineering, lemming, tokenizing, vectorization, etc.                      |
 |3. Create a content based filtering model                                             |
 
-|<img width=165/> Part Three <img width=165/>|
+|<img width=200/> Part Three <img width=200/>|
 |:----------:|
 |1. Serialize the model |
 |2. Create Django WebApp|
