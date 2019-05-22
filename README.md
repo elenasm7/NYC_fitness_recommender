@@ -35,20 +35,20 @@ In the next sections, I will outline the steps taken, report findings and share 
 ## Steps Taken:
 
 |Part One|
-|-------------|
+|:-------------:|
 |1. Yelp and ClassPass Data aquisition (Selenium and Beautifulsoup)|
 |2. Exploratory Data Analysis (EDA) and Data Cleaning|
 |3. Create baseline collaborative-filtering models using _Surprise_|
 
-|Part Two|
-|--------|
-| 1. EDA and Cleaning for Text Data <img width=230/>                   |
+|<img width=120/>Part Two<img width=120/>|
+|:--------:|
+| 1. EDA and Cleaning for Text Data                    |
 |2. feature engineering, lemming, tokenizing, vectorization, etc.                      |
 |3. Create a content based filtering model                                             |
 
-|Part Three|
-|----------|
-|1. Serialize the model <img width=320/>|
+|<img width=165/> Part Three <img width=165/>|
+|:----------:|
+|1. Serialize the model |
 |2. Create Django WebApp|
 |2. Embed model in WebApp|
 
@@ -77,6 +77,12 @@ I was pretty surprised in how positive the reviews skewed. I was predicting the 
 <p align="center">
   <img width="425" alt="Company Review Count" height="auto" src="assets/Graphs/review_count_top_10.png">
   <img width="425" alt="User Review Count" height="auto" src="assets/Graphs/User_reviews_count.png">
+</p>
+
+After exploring the data more, I relaized that even though I filtered users and studios by location I didn't filter the reviews I scraped from them. There were many studios/gyms outside of the NYC metro area, so I dropped them. The follium map below shows all of the locations.
+
+<p align="center">
+  <img width="500" alt="Studio Map" height="auto" src="assets/studio_locations.png">
 </p>
 
 ## Natural Language Processing (*NLP*)
