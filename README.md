@@ -2,6 +2,20 @@
 
 An NYC based application to provide you with the best recommendations for fitness class, studios, and gyms. From yoga to cycling, swimming to energy healing, its got you covered. I hope you enjoy the final product as much as I have! 
 
+<br>
+
+|README Table of Contents |
+|:-------------:|
+| <img width=170/> Overview  <img width=170/>|
+|  Steps Taken |
+|  Data Acquisition |
+|  Explatory Data Analysis (*EDA*) |
+|  Natural Language Processing (*NLP*) |
+|  Baseline Models and Model Selection |
+|  Key Take Aways |
+|  Next Steps |
+
+
 ## Overview:
 
 Fitness is something that is super important to me, so as someone new to NYC it seemed like the perfect opportunity to create a recommender system to find my perfect new class(es). In this project I work to add more details and features into the recommender system to give better results than the ones I've found thus far. 
@@ -46,7 +60,7 @@ For the webscraping, I grabbed all of the reviewers from the initial start page-
 
 For the Yelp API, after I had the final list of comapnies I used those to return specific information about each. I defined a function that would return a dictionary of the company name, the total number of reviews, it's categories (i.e. cycling, yoga, etc.), and it's average rating.
 
-## Explatory Data Analysis
+## Explatory Data Analysis (*EDA*)
 
 After collecting all of the data, it was time to [explore](https://github.com/elenasm7/NYC_fitness_recommender/blob/master/exploratory_data_analysis.ipynb). This mostly consisited of looking at the distribution of start ratings, avergae star ratings by users and for businesses, distruibtion of the total number of reviews left my users and for companies.
 
@@ -65,5 +79,11 @@ I was pretty surprised in how positive the reviews skewed. I was predicting the 
   <img width="425" alt="User Review Count" height="auto" src="assets/Graphs/User_reviews_count.png">
 </p>
 
+## Natural Language Processing (*NLP*)
 
+## Baseline Models and Model Selection
+
+## Key Take Aways
+
+## Next Steps
 
