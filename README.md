@@ -177,6 +177,8 @@ As you can see, all of these had fairly similar average RMSE. However, the decid
 
 ## Django App
 
+### New York Fittie
+
 I created a small web app using Django. Django is great becuase it will handle so much of the backend. It also it great for a project like this due to it's automation connection to an SQL Database. All the main steps needed to set up the app is below.
 
 Steps:
@@ -203,5 +205,9 @@ Screen shots of the web app view below:
 5. **ALWAYS** do your initial migrations with you SQL database and the Django App, if not this can cause some headaches in the long run.
 
 ## Next Steps
-1. 
+1. Do more work with the class embalance of the ratings. Figure out the best method to augment scores using Sentiment Analysis.
+2. Combine the Content Based and the Collaborative Filtering Models to create a hybrid model.
+3. Use the themes identified by TF-IDF of the reviews to see what users are talking about. Possibly add this as the filter.
+4. Allow for cold start while using the Django App. Users should not need to enter their user names. 
+5. Continuation of 4, update the user names in DB.
 
