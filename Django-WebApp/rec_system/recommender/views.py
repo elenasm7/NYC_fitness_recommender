@@ -12,11 +12,11 @@ def search(request):
 
 	show_results = False
 
-	if request.GET:
-		query_1 = request.GET['query-1']
-		query_2 = request.GET['query-2']
-		query_3 = request.GET['query-3']
-		query_4 = request.GET['query-4']
+	if request.method == 'GET':
+		query_1 = request.GET.get('query-1')
+		query_2 = request.GET.get('query-2')
+		query_3 = request.GET.get('query-3')
+		query_4 = request.GET.get('query-4')
 		results = Company.objects.filter(categories__contains = query_2).filter(rating__gt = query_3)
 		results_list = list(results)
 
